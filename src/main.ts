@@ -1,28 +1,17 @@
-type TypeA = string;
-type TypeB = string | number | boolean;
-type User =
-  | {
-      name: string;
-      age: number;
-      isValid: boolean;
-    }
-  | [string, number, boolean];
-
-const userA: User = {
-  name: "John",
-  age: 30,
-  isValid: true,
+type TypeUser = {
+  name: string;
+  age: number;
+  isValid: boolean;
 };
 
-const userB: User = ["John", 30, true];
-
-function someFunc(param: TypeB): TypeA {
-  switch (typeof param) {
-    case "string":
-      return param.toUpperCase();
-    case "number":
-      return param.toFixed(2);
-    default:
-      return true;
-  }
+interface InterfaceUser {
+  name: string;
+  age: number;
+  isValid: boolean;
 }
+
+const heropy: InterfaceUser = {
+  name: "Heropy",
+  age: 20,
+  isValid: true,
+};
