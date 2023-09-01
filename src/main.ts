@@ -1,27 +1,28 @@
-class UserA {
-  constructor(
-    public first: string = "",
-    public last: string,
-    public age: number
-  ) {}
-  getAge() {
-    return `${this.first} ${this.last} is ${this.age}`;
+class User<P> {
+  constructor(public payload: P) {}
+  getpayload() {
+    return this.payload;
   }
 }
 
-class UserB extends UserA {
-  getAge(): string {
-    return `${this.first} ${this.last} is ${this.age}`;
-  }
+interface UserAType {
+  name: string;
+  age: number;
+  isValid: boolean;
+}
+interface UserBType {
+  name: string;
+  age: number;
+  email: string[];
 }
 
-class UserC extends UserB {
-  getAge(): string {
-    return `${this.first} ${this.last} is ${this.age}`;
-  }
-}
-
-const neo = new UserA("John", "Doe", 30);
-console.log(neo.first);
-console.log(neo.last);
-console.log(neo.age);
+const heropy = new User<UserAType>({
+  name: "heropy",
+  age: 18,
+  isValid: true,
+});
+const neo = new User<UserBType>({
+  name: "neo",
+  age: 18,
+  email: ["wjdwlswn23@naver.com"],
+});
