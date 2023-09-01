@@ -1,12 +1,27 @@
-// 1)
-function add(a: string, b: string): string; // 타입 선언
-function add(a: number, b: number): number; // 타입 선언
-function add(a: any, b: any) {
-  // 함수 구현
-  return a + b;
+class UserA {
+  constructor(
+    public first: string = "",
+    public last: string,
+    public age: number
+  ) {}
+  getAge() {
+    return `${this.first} ${this.last} is ${this.age}`;
+  }
 }
 
-add("hello", "world"); // hello world
-add(1, 2); // 3
-add("hello", 2); //에러
-add("hello", 2); //에러
+class UserB extends UserA {
+  getAge(): string {
+    return `${this.first} ${this.last} is ${this.age}`;
+  }
+}
+
+class UserC extends UserB {
+  getAge(): string {
+    return `${this.first} ${this.last} is ${this.age}`;
+  }
+}
+
+const neo = new UserA("John", "Doe", 30);
+console.log(neo.first);
+console.log(neo.last);
+console.log(neo.age);
