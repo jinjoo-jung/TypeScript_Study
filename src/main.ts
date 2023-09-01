@@ -1,28 +1,22 @@
-class User<P> {
-  constructor(public payload: P) {}
-  getpayload() {
-    return this.payload;
-  }
+interface MyData<T extends string | num> {
+  name: string;
+  vlaue: T;
 }
 
-interface UserAType {
-  name: string;
-  age: number;
-  isValid: boolean;
-}
-interface UserBType {
-  name: string;
-  age: number;
-  email: string[];
-}
+const dataA: MyData<string> = {
+  name: "data A",
+  vlaue: "Hello World",
+};
 
-const heropy = new User<UserAType>({
-  name: "heropy",
-  age: 18,
-  isValid: true,
-});
-const neo = new User<UserBType>({
-  name: "neo",
-  age: 18,
-  email: ["wjdwlswn23@naver.com"],
-});
+const dataB: MyData<number> = {
+  name: "Data B",
+  vlaue: 1234,
+};
+const dataC: MyData<boolean> = {
+  name: "Data C",
+  vlaue: true,
+};
+const dataD: MyData<number[]> = {
+  name: "Data D",
+  vlaue: [1, 2, 3, 4],
+};
