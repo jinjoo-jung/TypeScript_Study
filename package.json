@@ -12,5 +12,8 @@
   "devDependencies": {
     "parcel": "^2.9.3",
     "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }

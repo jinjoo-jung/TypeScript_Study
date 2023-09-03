@@ -1,22 +1,6 @@
-interface MyData<T extends string | num> {
-  name: string;
-  vlaue: T;
-}
+import _ from "lodash";
 
-const dataA: MyData<string> = {
-  name: "data A",
-  vlaue: "Hello World",
-};
+const str = "the brown fox jumped over the lazy dog";
 
-const dataB: MyData<number> = {
-  name: "Data B",
-  vlaue: 1234,
-};
-const dataC: MyData<boolean> = {
-  name: "Data C",
-  vlaue: true,
-};
-const dataD: MyData<number[]> = {
-  name: "Data D",
-  vlaue: [1, 2, 3, 4],
-};
+console.log(_.camelCase(str));
+console.log(_.snakeCase(str));
